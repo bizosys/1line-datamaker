@@ -27,6 +27,7 @@ package com.bizosys.sampling;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
 	
@@ -126,12 +127,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		 
-		 List<Byte> input = new ArrayList<Byte>();
-		 input.add( (byte) 23);
-		 input.add( (byte) 11);
-		 input.add((byte) 67);
-		 input.add((byte) 128);
+		 List<Integer> input = new ArrayList<Integer>();
+		 input.add(-10);
+		 input.add(-7);
+		 input.add(-2);
+		 input.add(0);
+		 input.add(1);
+		 input.add(3);
+		 input.add(4);
+		 input.add(6);
+		 input.add(10);
 		 
-		 System.out.println(Main.cookByte(input, 10));
+		 List<Integer> output = Main.cookIntegers(input, 1000);
+		 for ( int i: output) {
+			 if ( i>=-10 && i<=10) System.out.println(i);
+		 }
 	 }
 }
